@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-09T19:52:16.320Z",
+    "end": "2025-02-09T19:52:42.302Z",
+    "duration": 25982,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c662a9cc-2d01-4dee-9fda-a788d110285a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\features\\user.spec.cy.js",
+      "file": "cypress\\e2e\\features\\user.spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d7b61db4-f627-4127-91d8-7d82f149aba1",
+          "title": "Teste de formulário de cadastro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "cadastrar um usuário com sucesso",
+              "fullTitle": "Teste de formulário de cadastro cadastrar um usuário com sucesso",
+              "timedOut": null,
+              "duration": 6741,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://advantageonlineshopping.com/');\ncy.get(_user_elements.UserElements.buttonLogin).click();\ncy.get(_user_elements.UserElements.buttonCreateNewAccount).click();\ncy.get(_user_elements.UserElements.fieldUserName).type(_user_elements.UserElements.customUserName);\ncy.get(_user_elements.UserElements.fieldRegisterEmail).type(_user_elements.UserElements.customUserEmail);\ncy.get(_user_elements.UserElements.fieldUserPassword).type(_user_elements.UserElements.userPassword);\ncy.get(_user_elements.UserElements.fieldConfirmUserPassword).type(_user_elements.UserElements.userPassword, {\n  force: true\n});\ncy.get(_user_elements.UserElements.fieldUserFirstName).type(_user_elements.UserElements.customUserName);\ncy.get(_user_elements.UserElements.fieldLastName).type(_user_elements.UserElements.customUserLastName);\ncy.get(_user_elements.UserElements.fieldPhoneNumber).type('999999999');\ncy.get(_user_elements.UserElements.fieldCountry).select('Brazil');\ncy.get(_user_elements.UserElements.fieldCity).type('Sao Paulo');\ncy.get(_user_elements.UserElements.fieldAddress).type('Avenida Paulista');\ncy.get(_user_elements.UserElements.fieldPostalCode).type('12345123');\ncy.get(_user_elements.UserElements.agreePrivacyPolicy).click();\ncy.get(_user_elements.UserElements.buttonRegister).click();",
+              "err": {},
+              "uuid": "6e144ddd-16d5-4a17-bd3a-30d32dbea3c5",
+              "parentUUID": "d7b61db4-f627-4127-91d8-7d82f149aba1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar impossibilidade de cadastrar um usuário sem preencher todos os campos obrigatórios",
+              "fullTitle": "Teste de formulário de cadastro Validar impossibilidade de cadastrar um usuário sem preencher todos os campos obrigatórios",
+              "timedOut": null,
+              "duration": 4889,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://advantageonlineshopping.com/');\ncy.get(_user_elements.UserElements.buttonLogin).click();\ncy.get(_user_elements.UserElements.buttonCreateNewAccount).click();\ncy.get(_user_elements.UserElements.fieldUserName).type(_user_elements.UserElements.customUserName);\ncy.get(_user_elements.UserElements.fieldUserPassword).type(_user_elements.UserElements.userPassword);\ncy.get(_user_elements.UserElements.fieldConfirmUserPassword).type(_user_elements.UserElements.userPassword, {\n  force: true\n});\ncy.get(_user_elements.UserElements.fieldUserFirstName).type(_user_elements.UserElements.customUserName);\ncy.get(_user_elements.UserElements.fieldLastName).type(_user_elements.UserElements.customUserLastName);\ncy.get(_user_elements.UserElements.fieldPhoneNumber).type('999999999');\ncy.get(_user_elements.UserElements.fieldCountry).select('Brazil');\ncy.get(_user_elements.UserElements.fieldCity).type('Sao Paulo');\ncy.get(_user_elements.UserElements.fieldAddress).type('Avenida Paulista');\ncy.get(_user_elements.UserElements.fieldPostalCode).type('12345123');\ncy.get(_user_elements.UserElements.agreePrivacyPolicy).click();\ncy.get(_user_elements.UserElements.buttonRegister).should('be.disabled');",
+              "err": {},
+              "uuid": "c0c97ea3-547b-4814-80cb-84dad46b6509",
+              "parentUUID": "d7b61db4-f627-4127-91d8-7d82f149aba1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar senha forte na criação do usuário, deve ter entre 4 e 12 caracteres e incluir pelo menos 1 letra maiuscula, 1 minúscula e 1 número",
+              "fullTitle": "Teste de formulário de cadastro Validar senha forte na criação do usuário, deve ter entre 4 e 12 caracteres e incluir pelo menos 1 letra maiuscula, 1 minúscula e 1 número",
+              "timedOut": null,
+              "duration": 5512,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://advantageonlineshopping.com/');\ncy.get(_user_elements.UserElements.buttonLogin).click();\ncy.get(_user_elements.UserElements.buttonCreateNewAccount).click();\ncy.get(_user_elements.UserElements.fieldUserName).type(_user_elements.UserElements.customUserName);\ncy.get(_user_elements.UserElements.fieldUserPassword).type(_user_elements.UserElements.fewCaractersPassword);\ncy.get(_user_elements.UserElements.passwordErrorMsg).should('be.visible');\ncy.get(_user_elements.UserElements.fieldUserPassword).type(_user_elements.UserElements.onlycarctersPassword);\ncy.get(_user_elements.UserElements.passwordErrorMsg).should('be.visible');\ncy.get(_user_elements.UserElements.fieldUserPassword).type(_user_elements.UserElements.onlyNumberPassword);\ncy.get(_user_elements.UserElements.passwordErrorMsg).should('be.visible');\ncy.get(_user_elements.UserElements.fieldUserPassword).type(_user_elements.UserElements.exceedCaracterLimitPassword);\ncy.get(_user_elements.UserElements.passwordErrorMsg).should('be.visible');\ncy.get(_user_elements.UserElements.fieldUserPassword).type(_user_elements.UserElements.onlyUpperCasePassword);\ncy.get(_user_elements.UserElements.passwordErrorMsg).should('be.visible');\ncy.get(_user_elements.UserElements.fieldUserPassword).type(_user_elements.UserElements.userPassword);\ncy.get(_user_elements.UserElements.fieldConfirmUserPassword).type('mar', {\n  force: true\n});\ncy.get(_user_elements.UserElements.fieldUserFirstName).type(_user_elements.UserElements.customUserName);\ncy.get(_user_elements.UserElements.fieldLastName).type(_user_elements.UserElements.customUserLastName);\ncy.get(_user_elements.UserElements.fieldPhoneNumber).type('999999999');\ncy.get(_user_elements.UserElements.fieldCountry).select('Brazil');\ncy.get(_user_elements.UserElements.fieldCity).type('Sao Paulo');\ncy.get(_user_elements.UserElements.fieldAddress).type('Avenida Paulista');\ncy.get(_user_elements.UserElements.fieldPostalCode).type('12345123');\ncy.get(_user_elements.UserElements.agreePrivacyPolicy).click();\ncy.get(_user_elements.UserElements.buttonRegister).should('be.disabled');",
+              "err": {},
+              "uuid": "c387b08d-da12-4e7f-a9da-e0b289de12df",
+              "parentUUID": "d7b61db4-f627-4127-91d8-7d82f149aba1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar que as os campos senha e confirmar senha sejam iguais",
+              "fullTitle": "Teste de formulário de cadastro Validar que as os campos senha e confirmar senha sejam iguais",
+              "timedOut": null,
+              "duration": 4666,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://advantageonlineshopping.com/');\ncy.get(_user_elements.UserElements.buttonLogin).click();\ncy.get(_user_elements.UserElements.buttonCreateNewAccount).click();\ncy.get(_user_elements.UserElements.fieldUserName).type(_user_elements.UserElements.customUserName);\ncy.get(_user_elements.UserElements.fieldUserPassword).type(_user_elements.UserElements.userPassword);\ncy.get(_user_elements.UserElements.fieldConfirmUserPassword).type(_user_elements.UserElements.userPasswordConfirmationNOK, {\n  force: true\n});\ncy.get(_user_elements.UserElements.passowordNotMatch).should('be.visible');\ncy.get(_user_elements.UserElements.fieldUserFirstName).type(_user_elements.UserElements.customUserName);\ncy.get(_user_elements.UserElements.fieldLastName).type(_user_elements.UserElements.customUserLastName);\ncy.get(_user_elements.UserElements.fieldPhoneNumber).type('999999999');\ncy.get(_user_elements.UserElements.fieldCountry).select('Brazil');\ncy.get(_user_elements.UserElements.fieldCity).type('Sao Paulo');\ncy.get(_user_elements.UserElements.fieldAddress).type('Avenida Paulista');\ncy.get(_user_elements.UserElements.fieldPostalCode).type('12345123');\ncy.get(_user_elements.UserElements.agreePrivacyPolicy).click();\ncy.get(_user_elements.UserElements.buttonRegister).should('be.disabled');",
+              "err": {},
+              "uuid": "8bcd7ef7-8f0e-4716-994f-b7cea4cc4eae",
+              "parentUUID": "d7b61db4-f627-4127-91d8-7d82f149aba1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6e144ddd-16d5-4a17-bd3a-30d32dbea3c5",
+            "c0c97ea3-547b-4814-80cb-84dad46b6509",
+            "c387b08d-da12-4e7f-a9da-e0b289de12df",
+            "8bcd7ef7-8f0e-4716-994f-b7cea4cc4eae"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21808,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
